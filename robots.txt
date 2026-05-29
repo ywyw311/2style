@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://달달티켓.com/sitemap.xml
