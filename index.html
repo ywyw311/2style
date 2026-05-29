@@ -1517,82 +1517,210 @@ revealOnScroll();
 }
 </style>
 
-<!-- 팝업 -->
-<div class="popup-wrap" id="mainPopup">
+ <!-- 팝업 -->
+<div class="popup-wrap" id="popupWrap">
 
-  <div class="popup-box">
+    <div class="popup">
 
-    <!-- 닫기 버튼 -->
-    <button class="popup-close" onclick="closePopup()">✕</button>
+        <!-- X 버튼 -->
+        <button class="popup-x" id="popupCloseX">✕</button>
 
-    <!-- 팝업 이미지 -->
-    <img src="image/pop.png" alt="팝업">
+        <!-- 팝업 이미지 -->
+        <img src="image/notice.png" alt="팝업">
 
-  </div>
+        <!-- 하단 버튼 -->
+        <div class="popup-footer">
+
+            <button class="popup-btn" id="popupToday">
+                1일 동안 보지 않음
+            </button>
+
+            <button class="popup-btn" id="popupClose">
+                닫기
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
 
 <style>
-    /* 팝업 배경 */
+ /* 팝업 전체 */
 .popup-wrap{
     position:fixed;
-    top:50px;
-    left:-800px;
+    top:0;
+    left:0;
 
     width:100%;
     height:100%;
 
+    
 
     display:flex;
-    justify-content:center;
-    align-items:center;
+  justify-content:flex-start;
+align-items:flex-start;
+padding:20px;
 
     z-index:999999;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s;
+}
+
+/* 팝업 열릴 때 */
+.popup-wrap.show{
+    opacity:1;
+    visibility:visible;
 }
 
 /* 팝업 박스 */
-.popup-box{
-    position:relative;
-
+.popup{
     width:90%;
-    max-width:500px;
+    max-width:700px;
 
-    border-radius:20px;
+    background:#ffe600;
+
+    border-radius:10px;
     overflow:hidden;
 
-    background:#fff;
+    position:relative;
+
+    transform:scale(0.8);
+    transition:0.3s;
+}
+
+/* 열릴 때 확대 */
+.popup-wrap.show .popup{
+    transform:scale(1);
 }
 
 /* 팝업 이미지 */
-.popup-box img{
+.popup img{
     width:100%;
     display:block;
 }
 
-/* 닫기 버튼 */
-.popup-close{
+/* X 버튼 */
+.popup-x{
     position:absolute;
-    top:10px;
-    right:10px;
+    top:15px;
+    right:15px;
 
-    width:35px;
-    height:35px;
+    background:none;
+    border:none;
+
+    font-size:32px;
+    color:#666;
+
+    cursor:pointer;
+
+    z-index:10;
+}
+
+/* 하단 버튼 영역 */
+.popup-footer{
+    display:flex;
+    background:#fff;
+}
+
+/* 하단 버튼 */
+.popup-btn{
+    width:50%;
+    height:60px;
 
     border:none;
-    border-radius:50%;
-
-    background:#000;
-    color:#fff;
+    background:#fff;
 
     font-size:18px;
     cursor:pointer;
+}
+
+/* 버튼 사이 선 */
+.popup-btn:first-child{
+    border-right:1px solid #ddd;
+}
+
+/* 모바일 */
+@media screen and (max-width:768px){
+
+    .popup{
+        width:95%;
+         max-width:420px;
+
+        margin:0 auto; /* ← 중앙 정렬 */
+    }
+
+    .popup-btn{
+        height:50px;
+        font-size:14px;
+    }
+
+    .popup-x{
+        font-size:24px;
+    }
+
+     .popup-wrap{
+        justify-content:center;
+        align-items:center;
+
+        padding:0;
+    }
 }
 </style>
 
 <script>
 
-function closePopup(){
-    document.getElementById('mainPopup').style.display = 'none';
-}
+document.addEventListener('DOMContentLoaded', function(){
+
+    const popupWrap = document.getElementById('popupWrap');
+
+    const closeBtn = document.getElementById('popupClose');
+    const closeX = document.getElementById('popupCloseX');
+
+    const todayBtn = document.getElementById('popupToday');
+
+    // 오늘 날짜
+    const today = new Date().toISOString().split('T')[0];
+
+    // 저장된 날짜
+    const hideDate = localStorage.getItem('popupHide');
+
+    // 오늘 숨김이 아니면 팝업 표시
+    if(hideDate !== today){
+
+        setTimeout(function(){
+
+            popupWrap.classList.add('show');
+
+        }, 200);
+
+    }
+
+    // 닫기 함수
+    function closePopup(){
+
+        popupWrap.classList.remove('show');
+
+    }
+
+    // X 버튼
+    closeX.addEventListener('click', closePopup);
+
+    // 닫기 버튼
+    closeBtn.addEventListener('click', closePopup);
+
+    // 하루동안 숨기기
+    todayBtn.addEventListener('click', function(){
+
+        localStorage.setItem('popupHide', today);
+
+        closePopup();
+
+    });
+
+});
 
 </script>
