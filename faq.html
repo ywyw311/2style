@@ -1,25 +1,41 @@
-<div class="ometicket-wrap">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
 
   <!-- 상단 -->
   <section class="top-banner">
-    <img src="/images/naversearch.png">
+    <img src="image/naversearch.png">
      
     
 <style>
+
+    /* 직접 업로드한 폰트 연결 */
+@font-face {
+    font-family:'Cafe24Ssurround';
+    src:url('https://cdn.jsdelivr.net/gh/ywyw311/font@main/Cafe24Ssurround-v2.0/Cafe24Ssurround-v2.0/webfont/Cafe24Ssurround-v2.0.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+
       .top-banner{
-    width:100%;
+width:100%;
     background:#ffffff;
 
     display:flex;
     justify-content:center; /* 가로 중앙 */
     align-items:center;     /* 세로 중앙 */
 
-    padding:30px 0;
+    padding:5px 0;
+
+     margin:0;
 }
 
 /* 이미지 */
 .top-banner img{
-    max-width:100%;
+    max-width:45%;
     height:auto;
 
     display:block;
@@ -34,8 +50,8 @@
 /* 상단 메뉴 */
 .top-menu{
     width:100%;
-    background:#ffffff;
-    padding:30px 0;
+    background:#ffffff !important;
+    padding:8px 0;
 }
 
 .top-menu ul{
@@ -55,10 +71,10 @@
 
     text-decoration:none;
     color:#111;
-    font-size:32px;
+    font-size:29px;
     font-weight:600;
 
-    padding:14px 30px;
+    padding:8px 30px;
 
     border-radius:999px; /* 동그랗게 */
 
@@ -75,18 +91,26 @@
 @media screen and (max-width:768px){
 
     .top-menu{
-        padding:20px 0;
+        padding:12px 0;
     }
 
     .top-menu ul{
-        gap:25px;
-        flex-wrap:wrap;
+        gap:8px;
+        flex-wrap:nowrap;   /* ← 줄바꿈 금지 */
     }
 
     .top-menu ul li a{
-        font-size:20px;
-        padding:10px 20px;
+        font-size:13px;
+        padding:8px 10px;
+        white-space:nowrap;
     }
+
+    .top-banner img{
+    max-width:100%;
+    height:auto;
+
+    display:block;
+}
 }
 
 </style>
@@ -98,7 +122,7 @@
         <li><a href="/index.html#kakao">카톡 친구추가</a></li>
         <li><a href="/index.html#call">전화 및 문자문의</a></li>
         <li><a href="/index.html#review">이용후기</a></li>
-      <li><a href="/faq.html">자주하는 질문</a></li>
+      <li><a href="./faq.html">자주하는 질문</a></li>
     </ul>
 </nav>
     
@@ -107,8 +131,8 @@
   <!-- FAQ 1 -->
   <div class="faq-item">
     <button class="faq-question">
-      <span> <img  class="faq-icon" src="/images/question.png"> 어떻게 이용하는 건가요?</span>
-      <span class="arrow"><img  class="faq-icon2" src="/images/arrow.png"></span>
+      <span> <img  class="faq-icon" src="image/question.png"> 어떻게 이용하는 건가요?</span>
+      <span class="arrow"><img  class="faq-icon2" src="image/arrow.png"></span>
     </button>
 
     <div class="faq-answer">
@@ -141,8 +165,8 @@
   <!-- FAQ 2 -->
   <div class="faq-item">
     <button class="faq-question">
-      <span><img  class="faq-icon" src="/images/question.png">  얼마까지 이용이 가능한가요?</span>
-      <span class="arrow"><img  class="faq-icon2" src="/images/arrow.png"></span>
+      <span><img  class="faq-icon" src="image/question.png">  얼마까지 이용이 가능한가요?</span>
+      <span class="arrow"><img  class="faq-icon2" src="image/arrow.png"></span>
     </button>
 
    <div class="faq-answer">
@@ -222,8 +246,8 @@
  <!-- FAQ 3 -->
 <div class="faq-item">
  <button class="faq-question">
-    <span><img  class="faq-icon" src="/images/question.png">  본인 명의만 진행이 가능한가요?</span>
-    <span class="arrow"><img  class="faq-icon2" src="/images/arrow.png"></span>
+    <span><img  class="faq-icon" src="image/question.png">  본인 명의만 진행이 가능한가요?</span>
+    <span class="arrow"><img  class="faq-icon2" src="image/arrow.png"></span>
   </button>
 
   <div class="faq-answer">
@@ -253,8 +277,8 @@
 <div class="faq-item">
 
   <button class="faq-question">
-    <span><img  class="faq-icon" src="/images/question.png">  서비스 이용 가능한 시간은 언제인가요?</span>
-    <span class="arrow"><img  class="faq-icon2" src="/images/arrow.png"></span>
+    <span><img  class="faq-icon" src="image/question.png">  서비스 이용 가능한 시간은 언제인가요?</span>
+    <span class="arrow"><img  class="faq-icon2" src="image/arrow.png"></span>
   </button>
 
   <div class="faq-answer">
@@ -275,8 +299,8 @@
 <div class="faq-item">
 
   <button class="faq-question">
-    <span><img  class="faq-icon" src="/images/question.png">  입금까지 시간이 얼마나 걸리나요?</span>
-    <span class="arrow"><img  class="faq-icon2" src="/images/arrow.png"></span>
+    <span><img  class="faq-icon" src="image/question.png">  입금까지 시간이 얼마나 걸리나요?</span>
+    <span class="arrow"><img  class="faq-icon2" src="image/arrow.png"></span>
   </button>
 
   <div class="faq-answer" >
@@ -294,8 +318,8 @@
 <div class="faq-item">
 
   <button class="faq-question">
-    <span><img  class="faq-icon" src="/images/question.png">  신용에 문제가 발생하지는 않나요?</span>
-    <span class="arrow"><img  class="faq-icon2" src="/images/arrow.png"></span>
+    <span><img  class="faq-icon" src="image/question.png">  신용에 문제가 발생하지는 않나요?</span>
+    <span class="arrow"><img  class="faq-icon2" src="image/arrow.png"></span>
   </button>
 
   <div class="faq-answer" >
@@ -371,6 +395,7 @@
     width:90%;
         max-width:1400px;
     margin:80px auto;
+  
 }
 
 /* FAQ 박스 */
@@ -450,18 +475,66 @@
 /* 모바일 */
 @media screen and (max-width:768px){
 
+.faq-section{
+    width:94%;
+    margin:30px auto;
+}
+
+
+.faq-question span:first-child{
+    display:flex;
+    align-items:center;
+
+    white-space:nowrap;
+}
+/* 질문 버튼 */
 .faq-question{
-    font-size:22px;
-    padding:25px;
+    font-size:15px;
+    padding:14px 12px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* 질문 아이콘 */
+.faq-icon{
+    width:28px;
+    height:28px;
+  top:0px;
+    margin-right:6px;
+}
+
+/* 화살표 */
+.faq-icon2{
+    width:22px;
+    height:22px;
+
+    margin-right:0;
 }
 
 .arrow{
-    font-size:32px;
+    margin-left:auto;
 }
 
+/* 답변 */
 .faq-answer{
-    font-size:18px;
-    padding:25px;
+    font-size:13px;
+    line-height:1.7;
+
+    padding:18px 16px;
+
+    border-radius:0 0 14px 14px;
+}
+
+/* 제목 */
+.faq-answer h4{
+    font-size:14px;
+}
+
+/* strong */
+.faq-answer strong{
+    font-size:13px;
 }
 
 }
@@ -488,14 +561,14 @@ faqItems.forEach(item => {
     <!-- 하단 푸터 -->
 <footer class="site-footer">
 
-  <h3>오예티켓</h3>
+  <h3>달달티켓</h3>
 
   <p>
-    상호 : 오예티켓 ｜ 대표전화 : 010-7386-6610
+    상호 : 달달티켓 ｜ 대표전화 : 010-2154-2587
   </p>
 
   <span>
-    COPYRIGHT © 오예티켓 ALL RIGHTS RESERVED
+    COPYRIGHT © 달달티켓 ALL RIGHTS RESERVED
   </span>
 
 </footer>
@@ -504,30 +577,50 @@ faqItems.forEach(item => {
 .site-footer{
     width:100%;
     text-align:center;
-    padding:35px 20px 45px;
+    padding:50px 20px 45px;
     box-sizing:border-box;
     background:#fff8e1;
 }
 
 .site-footer h3{
-    font-size:15px;
+    font-size:18px;
     color:#333;
-    margin-bottom:18px;
+    margin-bottom:0px;
 }
 
 .site-footer p{
-    font-size:12px;
+    font-size:15px;
     color:#555;
-    margin-bottom:10px;
+    margin-bottom:0px;
 }
 
 .site-footer span{
-    font-size:12px;
+    font-size:15px;
     color:#555;
 }
 
 /* 모바일 */
 @media screen and (max-width:768px){
+
+    .site-footer{
+         padding:50px 20px 45px;
+    }
+    .site-footer h3{
+    font-size:15px !important;
+    color:#333;
+    margin-bottom:0px;
+}
+
+.site-footer p{
+    font-size:12px !important;
+    color:#555;
+    margin-bottom:0px;
+}
+
+.site-footer span{
+    font-size:12px !important;
+    color:#555;
+}
 
 .info-left,
 .info-right{
@@ -535,12 +628,12 @@ faqItems.forEach(item => {
 }
 
 .mini-text{
-    font-size:36px;
+    font-size:25px;
     -webkit-text-stroke:2px #000;
 }
 
 .main-logo{
-    font-size:90px;
+    font-size:70px;
     -webkit-text-stroke:3px #000;
 }
 
@@ -554,22 +647,22 @@ faqItems.forEach(item => {
 }
 
 .info-right p{
-    font-size:34px;
+    font-size:25px;
     margin-bottom:25px;
     letter-spacing:-1px;
 }
 
 .info-right h2{
-    font-size:34px;
+    font-size:25px;
     letter-spacing:-1px;
 }
 
 .site-footer h3{
-    font-size:18px;
+    font-size:15px;
 }
 
 .site-footer p{
-    font-size:14px;
+    font-size:12px;
 }
 
 .site-footer span{
@@ -580,10 +673,106 @@ faqItems.forEach(item => {
 </style>
 
 
-      <style>
-        body{
+
+<!-- 모바일 하단 고정 메뉴 -->
+<div class="mobile-fixed-menu">
+
+  <!-- 전화 -->
+  <a href="tel:01021542587" class="fixed-call">
+    📞전화 문의
+  </a>
+
+  <!-- 문자 -->
+  <a href="sms:01021542587" class="fixed-sms">
+    💌문자 문의
+  </a>
+
+</div>
+
+
+
+<style>
+
+body{
     background:#fff8e1;
+}
+
+html,
+body{
     margin:0;
     padding:0;
 }
-    </style>
+
+/* 모바일 하단 고정 메뉴 */
+.mobile-fixed-menu{
+    display:none;
+}
+
+/* 모바일 */
+@media screen and (max-width:768px){
+
+    .mobile-fixed-menu{
+        position:fixed;
+        left:0;
+        bottom:0;
+
+        width:100%;
+        height:65px;
+
+        display:flex;
+
+        z-index:9999999;
+    }
+
+    .mobile-fixed-menu a{
+        width:50%;   /* ← 정확히 반반 */
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        font-size:15px;
+        font-weight:700;
+
+        text-decoration:none;
+        color:#111;
+
+        box-sizing:border-box;
+    }
+
+    .fixed-call{
+        background:#ffc410;
+    }
+
+    .fixed-sms{
+        background:#ff9d00;
+    }
+
+    body{
+        padding-bottom:65px;
+        overflow-x:hidden;
+    }
+
+    .dalticket-wrap{
+        width:100% !important;
+        max-width:100% !important;
+        margin:0 auto !important;
+        padding:0 !important;
+    }
+
+    section{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    img{
+        max-width:100%;
+        height:auto;
+        display:block;
+    }
+
+}
+
+
+
+</style>
