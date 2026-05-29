@@ -1,27 +1,39 @@
- <div class="dalticket-wrap">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
 
   <!-- 상단 -->
   <section class="top-banner">
-    <img src="/images/naversearch.png">
+    <img src="image/naversearch.png">
      
     
 <style>
+
+    /* 직접 업로드한 폰트 연결 */
+@font-face {
+    font-family:'Cafe24Ssurround';
+    src:url('https://cdn.jsdelivr.net/gh/ywyw311/font@main/Cafe24Ssurround-v2.0/Cafe24Ssurround-v2.0/webfont/Cafe24Ssurround-v2.0.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+
       .top-banner{
-  width:100vw;
-    margin-left:calc(50% - 50vw);
-    margin-right:calc(50% - 50vw);
+width:100%;
     background:#ffffff;
 
     display:flex;
     justify-content:center; /* 가로 중앙 */
     align-items:center;     /* 세로 중앙 */
 
-    padding:30px 0;
+    padding:5px 0;
 }
 
 /* 이미지 */
 .top-banner img{
-    max-width:100%;
+    max-width:45%;
     height:auto;
 
     display:block;
@@ -35,11 +47,9 @@
 
 /* 상단 메뉴 */
 .top-menu{
-     width:100vw;
-    margin-left:calc(50% - 50vw);
-    margin-right:calc(50% - 50vw);
+    width:100%;
     background:#ffffff;
-    padding:30px 0;
+    padding:8px 0;
 }
 
 .top-menu ul{
@@ -59,10 +69,10 @@
 
     text-decoration:none;
     color:#111;
-    font-size:32px;
+    font-size:29px;
     font-weight:600;
 
-    padding:14px 30px;
+    padding:8px 30px;
 
     border-radius:999px; /* 동그랗게 */
 
@@ -79,18 +89,26 @@
 @media screen and (max-width:768px){
 
     .top-menu{
-        padding:20px 0;
+        padding:12px 0;
     }
 
     .top-menu ul{
-        gap:25px;
-        flex-wrap:wrap;
+        gap:8px;
+        flex-wrap:nowrap;   /* ← 줄바꿈 금지 */
     }
 
     .top-menu ul li a{
-        font-size:20px;
-        padding:10px 20px;
+        font-size:13px;
+        padding:8px 10px;
+        white-space:nowrap;
     }
+
+    .top-banner img{
+    max-width:100%;
+    height:auto;
+
+    display:block;
+}
 }
 
 </style>
@@ -102,39 +120,53 @@
         <li><a href="#kakao">카톡 친구추가</a></li>
         <li><a href="#call">전화 및 문자문의</a></li>
         <li><a href="#review">이용후기</a></li>
-      <li><a href="/faq.html">자주하는 질문</a></li>
+      <li><a href="./faq.html">자주하는 질문</a></li>
     </ul>
 </nav>
   <!-- 메인 -->
-  <section class="hero-section reveal">
-    <img src="/images/main.png">
+<section class="hero-section reveal">
+    <img src="image/main.png">
+    
     
 
-      <style>
-      .hero-section{
-    width:100%;
-    background:#fff8e1;
+    <style> 
+    .hero-section{ 
+        width:100%; 
+        background:#fff8e1; 
+        display:flex; 
+        justify-content:center; /* 가로 중앙 */ 
+        align-items:center; /* 세로 중앙 */ 
+        padding:15px 0; } /* 이미지 */ 
+        
+        .hero-section img{ 
+            max-width:50%; 
+            height:auto; 
+            display:block; 
+             margin:0 auto;
+            } 
 
-    display:flex;
-    justify-content:center; /* 가로 중앙 */
-    align-items:center;     /* 세로 중앙 */
 
-    padding:30px 0;
+            
+@media screen and (max-width:768px){  
+    
+    .hero-section img{
+        max-width:100%;
+        height:auto;
+        display:block;
+        margin:0 auto;
+    }                   
 }
 
-/* 이미지 */
-.hero-section img{
-    max-width:100%;
-    height:auto;
+            
+            </style>
+             </section>
 
-    display:block;
-}
-      </style>
-  </section>
+
+
 
   <!-- 상담 -->
   <section class="consult-section reveal">
-    <img src="/images/kind.png">
+    <img src="image/kind.png">
           <style>
       .consult-section{
     width:100%;
@@ -144,26 +176,42 @@
     justify-content:center; /* 가로 중앙 */
     align-items:center;     /* 세로 중앙 */
 
-    padding:30px 0;
+    padding:120px 0;
 }
 
 /* 이미지 */
+.consult-section img{
+    max-width:40%;
+    height:auto;
+
+    display:block;
+}
+
+
+@media screen and (max-width:768px){  
 .consult-section img{
     max-width:100%;
     height:auto;
 
     display:block;
 }
+}
+
+
+
+
+
       </style>
  
   </section>
 
   <!-- 진행방법 -->
   <section class="step-section reveal">
-  <img src="/images/how.png">
+  <img src="image/how.png" class="step-pc">
      <!-- 모바일 이미지 -->
-    <img src="/images/howtitle-mobile.png" class="mobile-only">
-     <img src="/images/howtext-mobile.png" class="mobile-only">
+    <img src="image/howtitle-mobile.png" class="step-mobile">
+     <img src="image/howtext-mobile.png" class="step-mobile">
+
 </section>
      <style>
       .step-section{
@@ -179,35 +227,52 @@
 
 /* 이미지 */
 .step-section img{
-    max-width:100%;
+    max-width:50%;
     height:auto;
 
     display:block;
 }
        
 
-/* 기본 */
-.pc-only{
+/* PC 이미지 */
+.step-pc{
     display:block !important;
+    max-width:50%;
+    height:auto;
 }
 
-.mobile-only{
+/* 모바일 이미지는 기본 숨김 */
+.step-mobile{
     display:none !important;
 }
 
 /* 모바일 */
 @media screen and (max-width:768px){
 
-    .pc-only{
+    .step-section{
+        flex-direction:column;
+    }
+
+    /* PC 이미지 숨김 */
+    .step-pc{
         display:none !important;
     }
 
-    .mobile-only{
+    /* 모바일 이미지 표시 */
+    .step-mobile{
         display:block !important;
-        width:100%;
+
+    width:90% !important;
+max-width:90% !important;
+        max-width:none;
+
+        margin:0 auto;
     }
 
 }
+    
+
+
 
       </style>
 
@@ -217,24 +282,15 @@
 <!-- 카카오톡 친구추가 -->
 <section id="kakao" class="kakao-guide reveal">
 
-  <img src="/images/kakao.png">
+  <img src="image/kakao.png">
 
-  <p class="sub-text">
-    부재 시 전화나 문자 주세요
-  </p>
+
 
 </section>
 
 
 <style>
 
-/* 직접 업로드한 폰트 연결 */
-@font-face {
-    font-family:'Cafe24Ssurround';
-    src:url('https://cdn.jsdelivr.net/gh/ywyw311/1style@main/Cafe24Ssurround-v2.0/Cafe24Ssurround-v2.0/webfont/Cafe24Ssurround-v2.0.woff') format('woff');
-    font-weight:normal;
-    font-style:normal;
-}
 
 /* 전체 */
 .kakao-guide{
@@ -248,38 +304,30 @@
     align-items:center;
 
     text-align:center;
-
+ overflow:hidden;
     padding:40px 0;
 }
 
 /* 이미지 */
 .kakao-guide img{
-    max-width:100%;
+    max-width:65%;
     height:auto;
 
     display:block;
     margin:0 auto;
 }
 
-/* 글씨 */
-.kakao-guide .sub-text{
-
-    margin-top:25px !important;
-
-    font-size:70px !important;
-
-    font-family:'Cafe24Ssurround' !important;
-
-    color:#341617 !important;
-
-    line-height:1.4 !important;
-}
 
 /* 모바일 */
 @media screen and (max-width:768px){
 
-    .kakao-guide .sub-text{
-        font-size:24px !important;
+    .kakao-guide img{
+        width:140%;
+        max-width:140%;
+      
+          position:relative;
+    left:50%;
+    transform:translateX(-50%);
     }
 
 }
@@ -435,7 +483,7 @@
 /* 전체 */
 .status-section{
     width:100%;
-    max-width:1400px;
+    max-width:1000px;
     margin:0 auto;
     text-align:center;
 
@@ -448,12 +496,14 @@
     font-size:80px;
     margin-bottom:50px;
     font-family:'Cafe24Ssurround' !important;
+   
     color:#222;
 }
 
 .section-title span{
     color:#84640e;
     font-family:'Cafe24Ssurround' !important;
+  
 }
 
 /* 테이블 */
@@ -598,6 +648,7 @@
     animation:scrollUpMobile 100s steps(20) infinite;
 }
 
+
 /* 모바일 애니메이션 */
 @keyframes scrollUpMobile{
 
@@ -610,17 +661,18 @@
     }
 
 }
+}
 
 </style>
 <!-- 스미싱 예방 -->
 <section class="safe-section reveal">
-<img src="/images/dangertitle.png">
- <img src="/images/dangertext.png">
-  </div>
+<img src="image/dangertitle.png"class="safe-pc">
+ <img src="image/dangertext.png"class="safe-pc">
+ 
 
     <!-- 모바일용 -->
-  <div class="safe-mobile">
-    <img src="/images/danger-mobile.png">
+  <div class="safe-mobile-wrap">
+    <img src="image/danger-mobile.png"class="safe-mobile">
   </div>
 
   </section>
@@ -640,31 +692,39 @@
 
 /* 이미지 공통 */
 .safe-section img{
-    max-width:100%;
+    max-width:45%;
     height:auto;
     display:block;
 }
 
 /* 기본 */
 .safe-pc{
-    display:block;
+    display:block !important;
 }
 
-.safe-mobile{
-    display:none;
+.safe-mobile-wrap{
+    display:none !important;
 }
     /* 모바일 */
 @media screen and (max-width:768px){
 
     .safe-pc{
-        display:none ;
+        display:none !important;
     }
 
-    .safe-mobile{
-        display:block ;
+    .safe-mobile-wrap{
+        display:block !important;
+
         width:100%;
+     
     }
+ .safe-mobile{
+        width:100% !important;
+        max-width:100% !important;
 
+        display:block;
+        margin:0 auto;
+    }
 }
 
 
@@ -686,7 +746,7 @@
         녹아내리네요👍
       </p>
 
-      <img src="/images/profile4.png">
+      <img src="image/profile4.png">
 
       <h3>달달하니~ 이름값합니다👍</h3>
       <span>박**님</span>
@@ -703,7 +763,7 @@
         
       </p>
 
-      <img src="/images/profile1.png">
+      <img src="image/profile1.png">
 
       <h3>이런 곳 또 없어요💖</h3>
       <span>김**님</span>
@@ -719,7 +779,7 @@
     
       </p>
 
-      <img src="/images/profile2.png">
+      <img src="image/profile2.png">
 
       <h3>안심하고 이용했어요</h3>
       <span>장**님</span>
@@ -736,7 +796,7 @@
         항상 고생 많으시네요 번창하세요
       </p>
 
-      <img src="/images/profile3.png">
+      <img src="image/profile3.png">
 
       <h3>급할 땐 무조건 달달티켓!</h3>
       <span>허**님</span>
@@ -753,7 +813,7 @@
         녹아내리네요👍
       </p>
 
-      <img src="/images/profile4.png">
+      <img src="image/profile4.png">
 
       <h3>달달하니~ 이름값합니다👍</h3>
       <span>박**님</span>
@@ -770,7 +830,7 @@
         
       </p>
 
-      <img src="/images/profile1.png">
+      <img src="image/profile1.png">
 
       <h3>이런 곳 또 없어요💖</h3>
       <span>김**님</span>
@@ -786,7 +846,7 @@
     
       </p>
 
-      <img src="/images/profile2.png">
+      <img src="image/profile2.png">
 
       <h3>안심하고 이용했어요</h3>
       <span>장**님</span>
@@ -803,7 +863,7 @@
         항상 고생 많으시네요 번창하세요
       </p>
 
-      <img src="/images/profile3.png">
+      <img src="image/profile3.png">
 
       <h3>급할 땐 무조건 달달티켓!</h3>
       <span>허**님</span>
@@ -820,7 +880,7 @@
         녹아내리네요👍
       </p>
 
-      <img src="/images/profile4.png">
+      <img src="image/profile4.png">
 
       <h3>달달하니~ 이름값합니다👍</h3>
       <span>박**님</span>
@@ -837,7 +897,7 @@
         
       </p>
 
-      <img src="/images/profile1.png">
+      <img src="image/profile1.png">
 
       <h3>이런 곳 또 없어요💖</h3>
       <span>김**님</span>
@@ -914,6 +974,7 @@
     border-radius:50%;
     object-fit:cover;
     margin-bottom:15px;
+      margin:0 auto 15px; 
 }
 
 .review-card h3{
@@ -984,7 +1045,7 @@
 
 .review-card{
     width:260px;
-    min-height:390px;
+    min-height:320px;
 
     padding:30px 18px;
 
@@ -1001,13 +1062,13 @@
 .review-text{
     font-size:16px;
     line-height:1.6;
-    min-height:160px;
+    min-height:110px;
 
     margin-bottom:25px;
 }
 
 .review-card h3{
-    font-size:20px;
+    font-size:19px;
     margin-bottom:8px;
 }
 
@@ -1060,32 +1121,107 @@
 
 <!-- 문의 배너 -->
 <div class="contact-wrap">
-  <section id="call"class="hero-section reveal">
-    <img src="/images/call.png">
-    <img src="/images/call2.png">
-    </section>
+  <section id="call" class="hero-section reveal contact-section">
+    <a href="tel:01021542587">
+    <img src="image/call.png">
+    </a>
 
+    <a href="sms:01021542587">
+    <img src="image/call2.png">
+</a>
+  </section>
 </div>
 
-
 <style>
-.info-banner{
+
+.contact-section{
     display:flex;
-    width:100%;
-    overflow:hidden;
+    flex-direction:row;   /* ← 가로 한줄 */
+    justify-content:center;
+    align-items:center;
+  
+    flex-wrap:nowrap;
+     gap:100px; 
 }
 
+.contact-section a{
+    width:48%;
+    max-width:500px;
 
+    display:block;
+}
 
+.contact-section img{
+    width:100%;            /* ← 두개 합쳐서 한줄 */
+    max-width:500px;
+}
+
+/* 모바일 */
+@media screen and (max-width:768px){
+
+    .contact-section{
+        padding:20px 10px;
+        gap:10px;
+    }
+      .contact-section a{
+        width:48%;
+        max-width:none;
+    }
+
+    .contact-section img{
+        width:100%;        /* ← 모바일에서 더 작게 */
+        max-width:none;
+    }
+
+}
 </style>
+
 
 
 <section class="info-banner reveal">
 
- 
-        <img src="/images/under.png">
-        
+    <img src="image/under.png">
+   
+
 </section>
+
+
+<style>
+  .info-banner{
+    width:100%;
+    overflow:hidden;
+    background:#fff8e1;
+    margin-top:70px;
+
+}
+
+.info-banner img{
+    width:70%;
+    display:block;
+   margin:0 auto;
+   
+}
+
+
+
+@media screen and (max-width:768px){
+
+  
+    
+
+    .info-banner img{
+        display:block !important;
+        width:125%;
+        max-width:125%;
+         position:relative;
+        left:50%;
+        transform:translateX(-43%);
+    }
+
+}
+</style>
+
+</div>
 
 <!-- 하단 푸터 -->
 <footer class="site-footer">
@@ -1108,21 +1244,44 @@
 .site-footer{
     width:100%;
     text-align:center;
-    padding:35px 20px 45px;
+    padding:150px 20px 45px;
     box-sizing:border-box;
     background:#fff8e1;
 }
 
 .site-footer h3{
+    font-size:18px;
+    color:#333;
+    margin-bottom:0px;
+}
+
+.site-footer p{
+    font-size:15px;
+    color:#555;
+    margin-bottom:0px;
+}
+
+.site-footer span{
+    font-size:15px;
+    color:#555;
+}
+
+/* 모바일 */
+@media screen and (max-width:768px){
+
+    .site-footer{
+         padding:50px 20px 45px;
+    }
+    .site-footer h3{
     font-size:15px;
     color:#333;
-    margin-bottom:18px;
+    margin-bottom:0px;
 }
 
 .site-footer p{
     font-size:12px;
     color:#555;
-    margin-bottom:10px;
+    margin-bottom:0px;
 }
 
 .site-footer span{
@@ -1130,21 +1289,18 @@
     color:#555;
 }
 
-/* 모바일 */
-@media screen and (max-width:768px){
-
 .info-left,
 .info-right{
     width:100%;
 }
 
 .mini-text{
-    font-size:36px;
+    font-size:25px;
     -webkit-text-stroke:2px #000;
 }
 
 .main-logo{
-    font-size:90px;
+    font-size:70px;
     -webkit-text-stroke:3px #000;
 }
 
@@ -1158,22 +1314,22 @@
 }
 
 .info-right p{
-    font-size:34px;
+    font-size:25px;
     margin-bottom:25px;
     letter-spacing:-1px;
 }
 
 .info-right h2{
-    font-size:34px;
+    font-size:25px;
     letter-spacing:-1px;
 }
 
 .site-footer h3{
-    font-size:18px;
+    font-size:15px;
 }
 
 .site-footer p{
-    font-size:14px;
+    font-size:12px;
 }
 
 .site-footer span{
@@ -1189,10 +1345,17 @@
     background:#fff8e1;
     margin:0;
     padding:0;
+
+
 }
+html, body{
+    width:100%;
+    overflow-x:hidden;
+}
+
         .dalticket-wrap{
-    width:92%;
-    max-width:1400px;
+    width:80%;
+    max-width:700px;
     margin:0 auto;
 }
         /* 스크롤 등장 효과 */
@@ -1280,9 +1443,10 @@ revealOnScroll();
   </a>
 
 </div>
+
 <style>
 
-/* 기본 숨김 */
+/* 모바일 하단 고정 메뉴 */
 .mobile-fixed-menu{
     display:none;
 }
@@ -1290,69 +1454,145 @@ revealOnScroll();
 /* 모바일 */
 @media screen and (max-width:768px){
 
-.mobile-fixed-menu{
+    .mobile-fixed-menu{
+        position:fixed;
+        left:0;
+        bottom:0;
 
-    position:fixed !important;
+        width:100%;
+        height:65px;
 
-    bottom:0;
-    left:0;
+        display:flex;
 
-    width:100%;
+        z-index:9999999;
+    }
 
-    display:flex !important;
+    .mobile-fixed-menu a{
+        width:50%;   /* ← 정확히 반반 */
 
-    z-index:999999;
-}
+        display:flex;
+        justify-content:center;
+        align-items:center;
 
-/* 버튼 공통 */
-.mobile-fixed-menu a{
+        font-size:15px;
+        font-weight:700;
 
-    width:50%;
-    height:65px;
+        text-decoration:none;
+        color:#111;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+        box-sizing:border-box;
+    }
 
-    text-decoration:none;
+    .fixed-call{
+        background:#ffc410;
+    }
 
-    font-size:17px;
-    font-weight:700;
-
-    color:#222;
-
-    box-sizing:border-box;
-}
-
-/* 전화 */
-.fixed-call{
-    background:#ffc410;
-}
-
-/* 문자 */
-.fixed-sms{
-    background:#fd9f28;
-}
-
-}
-
- @media screen and (max-width:768px){
+    .fixed-sms{
+        background:#ff9d00;
+    }
 
     body{
+        padding-bottom:65px;
         overflow-x:hidden;
     }
 
-    .ometicket-wrap{
+    .dalticket-wrap{
+        width:100% !important;
+        max-width:100% !important;
+        margin:0 auto !important;
+        padding:0 !important;
+    }
+
+    section{
         width:100%;
-        max-width:100%;
+        box-sizing:border-box;
     }
 
     img{
         max-width:100%;
         height:auto;
+        display:block;
     }
 
 }
-
 </style>
 
+<!-- 팝업 -->
+<div class="popup-wrap" id="mainPopup">
+
+  <div class="popup-box">
+
+    <!-- 닫기 버튼 -->
+    <button class="popup-close" onclick="closePopup()">✕</button>
+
+    <!-- 팝업 이미지 -->
+    <img src="image/pop.png" alt="팝업">
+
+  </div>
+
+</div>
+
+<style>
+    /* 팝업 배경 */
+.popup-wrap{
+    position:fixed;
+    top:50px;
+    left:-800px;
+
+    width:100%;
+    height:100%;
+
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:999999;
+}
+
+/* 팝업 박스 */
+.popup-box{
+    position:relative;
+
+    width:90%;
+    max-width:500px;
+
+    border-radius:20px;
+    overflow:hidden;
+
+    background:#fff;
+}
+
+/* 팝업 이미지 */
+.popup-box img{
+    width:100%;
+    display:block;
+}
+
+/* 닫기 버튼 */
+.popup-close{
+    position:absolute;
+    top:10px;
+    right:10px;
+
+    width:35px;
+    height:35px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#000;
+    color:#fff;
+
+    font-size:18px;
+    cursor:pointer;
+}
+</style>
+
+<script>
+
+function closePopup(){
+    document.getElementById('mainPopup').style.display = 'none';
+}
+
+</script>
